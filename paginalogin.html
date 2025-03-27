@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePage</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form action="scriptlogin.php" method="post">
-      <label for="username">User : </label>
-      <input type="text" name="username" id="username" required>
-      <br><label for="password">Password : </label>
-      <input type="password" name="password" id="password" required>
-      <br><input type="submit" value="Invia">
+
+  <div class="form-container">
+    <p class="title">Welcome back</p>
+    <form action="scriptlogin.php" method="post" class="form">
+      <input type="text" class="input" placeholder="Username" name="username" required>
+      <input type="password" class="input" placeholder="Password" name="password" required>
+      <p class="page-link">
+        <span class="page-link-label">Forgot Password?</span>
+      </p>
+      <button class="form-btn" type="submit">Log in</button>
     </form>
+    <p class="sign-up-label">
+      Don't have an account?<span class="sign-up-link"><a href="paginaregistrazione.html">Sign up</a></span>
+    </p>
+    <div class="buttons-container">
+    </div>
+  </div>
+
+
+
 </body>
+
 </html>
