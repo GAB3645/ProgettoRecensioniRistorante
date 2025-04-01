@@ -11,27 +11,34 @@
     $password = $_POST['password'];
     $passwordHASH = hash("sha256",$password);
 
-//MODIFICARE DA QUA IN GIU
-
     $sql = "SELECT * FROM utente WHERE username = '$username'";
+
     $result = $conn->query($sql);
 
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $passwordDB = $row["password"];
-        if ($passwordDB != $password) {
-            $_SESSION["errMessage"] = "Password Errata";
+        $_SESSION["errMessage"] = "Username già esistente";
+        header('Location: errore_loginreg.php');
+    } else {
+        $sql = "SELECT * FROM utente WHERE email = '$email'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $_SESSION["errMessage"] = "Email già esistente";
             header('Location: errore_loginreg.php');
         } else {
-            $_SESSION["loggedUser"] = $username;
-            $_SESSION["logged"] = true;
-            header('Location: benvenuto.php');
+            $sql = "INSERT INTO utente (username, nome, cognome, email, password)
+            VALUES ('$username', '$name', '$surname', '$email', '$passwordHASH')";
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION["loggedUser"] = $username;
+                $_SESSION["logged"] = true;
+                header('Location: benvenuto.php');
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
         }
-    } else {
-        header('Location: errore_loginreg.php');
-        $_SESSION["errMessage"] = "Utente Inesistente";
     }
 
-
 ?>
+
+
+
