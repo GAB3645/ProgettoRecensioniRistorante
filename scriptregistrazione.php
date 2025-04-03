@@ -15,16 +15,15 @@
 
     $result = $conn->query($sql);
 
-
     if ($result->num_rows > 0) {
         $_SESSION["errMessage"] = "Username già esistente";
-        header('Location: errore_loginreg.php');
+        header('Location: paginaregistrazione.php');
     } else {
         $sql = "SELECT * FROM utente WHERE email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $_SESSION["errMessage"] = "Email già esistente";
-            header('Location: errore_loginreg.php');
+            header('Location: paginaregistrazione.php');
         } else {
             $sql = "INSERT INTO utente (username, nome, cognome, email, password)
             VALUES ('$username', '$name', '$surname', '$email', '$passwordHASH')";
@@ -33,12 +32,11 @@
                 $_SESSION["logged"] = true;
                 header('Location: benvenuto.php');
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $_SESSION["errMessage"] = "Errore durante la registrazione";
+                header('Location: paginaregistrazione.php');
             }
         }
     }
 
 ?>
-
-
 

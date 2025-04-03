@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style2.css">
-
 </head>
 
 <body>
@@ -40,9 +43,18 @@
             <span>Password</span>
         </label>
         <button class="submit">Submit</button>
-        <p class="signin">Already have an acount ? <a href="paginalogin.html">Signin</a> </p>
+    <?php
+    if (isset($_SESSION["errMessage"])) {
+        echo "<p style='color:red;'>" . $_SESSION["errMessage"] . "</p>";
+        unset($_SESSION["errMessage"]);
+    }
+    ?>
+        <p class="signin">Already have an account? <a href="paginalogin.php">Signin</a></p>
     </form>
+
+
 
 </body>
 
 </html>
+

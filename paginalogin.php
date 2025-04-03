@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -15,20 +19,24 @@
     <form action="scriptlogin.php" method="post" class="form">
       <input type="text" class="input" placeholder="Username" name="username" required>
       <input type="password" class="input" placeholder="Password" name="password" required>
-      <p class="page-link">
-        <span class="page-link-label">Forgot Password?</span>
-      </p>
       <button class="form-btn" type="submit">Log in</button>
     </form>
+
+    <?php
+    if (isset($_SESSION["errMessage"])) {
+      echo "<p style='color:red;'>" . $_SESSION["errMessage"] . "</p>";
+      unset($_SESSION["errMessage"]);
+    }
+    ?>
+
     <p class="sign-up-label">
-      Don't have an account?<span class="sign-up-link"><a href="paginaregistrazione.html">Sign up</a></span>
+      Don't have an account?<span class="sign-up-link"><a href="paginaregistrazione.php">Sign up</a></span>
     </p>
     <div class="buttons-container">
     </div>
   </div>
 
-
-
 </body>
 
 </html>
+

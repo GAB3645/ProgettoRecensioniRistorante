@@ -1,16 +1,24 @@
 <?php
     session_start();
-    session_unset();
-    echo "<p>Logout Effettuato</p>";
+    if (isset($_SESSION["loggedUser"])) {
+        if (isset($_POST["logout"])) {
+            session_unset();
+            session_destroy();
+            header('Location: paginalogin.php');
+            exit;
+        } else {
+            echo "<script>
+            if(confirm('Sei sicuro di voler effettuare il logout?')) {
+                document.location.href = 'paginalogin.php';
+            } else {
+                document.location.href = 'benvenuto.php';
+            }
+            </script>";
+            exit;
+        }
+    } else {
+        header('Location: paginalogin.php');
+        exit;
+    }
 ?>
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logout</title>
-</head>
-<body>
-    <a href="paginalogin.html">Torna Indietro</a>
-</body>
-</html>
+
