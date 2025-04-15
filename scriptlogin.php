@@ -15,6 +15,7 @@
         if ($passwordDB == $passwordHASH) {
             $_SESSION["loggedUser"] = $username;
             $_SESSION["logged"] = true;
+            $_SESSION["idutente"] = $row["id_utente"];
             header('Location: benvenuto.php');
             exit;
         } else {

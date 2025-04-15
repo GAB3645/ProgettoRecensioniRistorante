@@ -34,14 +34,15 @@
                 WHERE u.username = '".$_SESSION["loggedUser"]."'";
                 $result = $conn->query($sql);
 
-                if ($result && $result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr><th>Nome Ristorante</th><th>Indirizzo</th><th>Voto</th><th>Data</th></tr>";
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["NomeRistorante"] . "</td><td>" . $row["indirizzo"]. "</td><td>" . $row["voto"]. "</td><td>" . date('d/m/Y', strtotime($row["data"])) . "</td></tr>";
-                    }
-                    echo "</table>";
+                echo "<div class='table-responsive'>";
+                echo "<table class='table table-striped'>";
+                echo "<tr><th>Nome Ristorante</th><th>Indirizzo</th><th>Voto</th><th>Data</th></tr>";
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr><td>" . $row["NomeRistorante"] . "</td><td>" . $row["indirizzo"]. "</td><td>" . $row["voto"]. "</td><td>" . date('d/m/Y', strtotime($row["data"])) . "</td></tr>";
                 }
+                echo "</table>";
+                echo "</div>";
+
             }
             
             echo '<br><form action="inseriscirecensione.php" method="post">';
@@ -72,7 +73,7 @@
             }
         }
     }
-?>
+?>  
 
 <!DOCTYPE html>
 <html lang="it">
