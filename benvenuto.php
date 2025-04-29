@@ -11,6 +11,11 @@
                 echo "<p> Nome: " . $row["nome"]. "</p>";
                 echo "<p> Cognome: " . $row["cognome"]. "</p>";
                 echo "<p> Email: " . $row["email"]. "</p>";
+                if($row["admin"] == 1) {
+                    $_SESSION["admin"] = true;
+                    header('Location: pannelloadmin.php');
+                    exit;
+                }
             }
 
             $sql = "SELECT COUNT(*) AS numero_recensioni 
@@ -87,4 +92,5 @@
     <br><a href="scriptlogout.php"><button type="button" class="btn btn-danger">Log-Out</button></a>
 </body>
 </html>
+
 
