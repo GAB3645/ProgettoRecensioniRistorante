@@ -62,3 +62,4 @@ if(isset($_POST["ristorante"]) && isset($_POST["voto"])) {
 }
 ?>
 
+

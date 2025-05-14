@@ -69,10 +69,10 @@
             
             if(isset($_SESSION["esitoRecensione"])) {
                 if($_SESSION["esitoRecensione"] == true) {
-                    echo "<p>Recensione inserita con successo</p>";
+                    echo "<p class='success'>Recensione inserita con successo</p>";
                     unset($_SESSION["esitoRecensione"]);
                 } else {
-                    echo "<p>Impossibile aggiungere la recensione</p>";
+                    echo "<p class='error'>Impossibile aggiungere la recensione</p>";
                     unset($_SESSION["esitoRecensione"]);
                 }
             }
@@ -86,7 +86,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="styleBenvenuto.css">
 </head>
 <body>
     <br><a href="scriptlogout.php"><button type="button" class="btn btn-danger">Log-Out</button></a>

@@ -9,17 +9,17 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HomePage</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylePaginalogin.css">
 </head>
 
 <body>
 
   <div class="form-container">
-    <p class="title">Welcome back</p>
+    <p class="title">Bentornato</p>
     <form action="scriptlogin.php" method="post" class="form">
       <input type="text" class="input" placeholder="Username" name="username" required>
       <input type="password" class="input" placeholder="Password" name="password" required>
-      <button class="form-btn" type="submit">Log in</button>
+      <button class="form-btn" type="submit">Accedi</button>
     </form>
 
     <?php
@@ -30,7 +30,7 @@ session_start();
     ?>
 
     <p class="sign-up-label">
-      Don't have an account?<span class="sign-up-link"><a href="paginaregistrazione.php">Sign up</a></span>
+      Non hai un account? <span class="sign-up-link"><a href="paginaregistrazione.php">Registrati</a></span>
     </p>
     <div class="buttons-container">
     </div>
