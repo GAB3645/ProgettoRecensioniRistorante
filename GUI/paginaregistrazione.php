@@ -9,12 +9,12 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylePaginaregistrazione.css">
+    <link rel="stylesheet" href="../css/stylePaginaregistrazione.css">
 </head>
 
 <body>
 
-    <form action="scriptregistrazione.php" method="post" class="form">
+    <form action="../script/scriptregistrazione.php" method="post" class="form">
         <p class="title">Registrati</p>
         <label>
             <input required="" placeholder="" type="text" class="input" name="username">
@@ -49,7 +49,7 @@ session_start();
         unset($_SESSION["errMessage"]);
     }
     ?>
-        <p class="signin">Hai già un account? <a href="paginalogin.php">Accedi</a></p>
+        <p class="signin">Hai già un account? <a href="../GUI/paginalogin.php">Accedi</a></p>
     </form>
 
 

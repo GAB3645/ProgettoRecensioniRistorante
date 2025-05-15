@@ -2,7 +2,7 @@
     session_start();
     if($_SESSION["logged"] != false) {
         echo "<h1>Benvenuto " . $_SESSION["loggedUser"] . "</h1>";
-        include("connessione.php");
+        include("../script/connessione.php");
         $sql = "SELECT * FROM utente WHERE username = '".$_SESSION["loggedUser"]."'";
         $result = $conn->query($sql);
 
@@ -13,7 +13,7 @@
                 echo "<p> Email: " . $row["email"]. "</p>";
                 if($row["admin"] == 1) {
                     $_SESSION["admin"] = true;
-                    header('Location: pannelloadmin.php');
+                    header('Location: ../GUI/pannelloadmin.php');
                     exit;
                 }
             }
@@ -50,7 +50,7 @@
 
             }
             
-            echo '<br><form action="inseriscirecensione.php" method="post">';
+            echo '<br><form action="../script/inseriscirecensione.php" method="post">';
             echo '<select name="ristorante">';
             $sql = "SELECT nome FROM ristorante";
             $result = $conn->query($sql);
@@ -78,7 +78,27 @@
             }
         }
     }
+
+
+
+    echo '<br><form action="../GUI/inforistorante.php" method="post">';
+    echo '<select name="ristorante">';
+    $sql = "SELECT nome FROM ristorante";
+    $result = $conn->query($sql);
+    if ($result && $result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo '<option value="'.$row["nome"].'">'.$row["nome"].'</option>';
+        }
+    }
+    echo '</select><br>';
+    echo '<input type="submit" value="Vedi informazioni">';
+    echo '</form>';
+
+
+
 ?>  
+
+
 
 <!DOCTYPE html>
 <html lang="it">
@@ -86,10 +106,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <link rel="stylesheet" href="styleBenvenuto.css">
+    <link rel="stylesheet" href="../css/styleBenvenuto.css">
 </head>
 <body>
-    <br><a href="scriptlogout.php"><button type="button" class="btn btn-danger">Log-Out</button></a>
+    <br><a href="../script/scriptlogout.php"><button type="button" class="btn btn-danger">Log-Out</button></a>
 </body>
 </html>
 

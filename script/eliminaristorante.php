@@ -1,9 +1,9 @@
 <?php
 session_start();
-include("connessione.php");
+include("../script/connessione.php");
 
 if (!isset($_SESSION["admin"]) || $_SESSION["admin"] !== true) {
-    header('Location: paginalogin.php');
+    header('Location: ../GUI/paginalogin.php');
     exit;
 }
 
@@ -20,6 +20,6 @@ if ($conn->query($sql2) === TRUE) {
 }
 
 $conn->close();
-header("Location: pannelloadmin.php");
+header("Location: ../GUI/pannelloadmin.php");
 exit;
 

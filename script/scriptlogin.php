@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("connessione.php");
+    include("../script/connessione.php");
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -16,7 +16,7 @@
             $_SESSION["loggedUser"] = $username;
             $_SESSION["logged"] = true;
             $_SESSION["idutente"] = $row["id_utente"];
-            header('Location: benvenuto.php');
+            header('Location: ../GUI/benvenuto.php');
             exit;
         } else {
             $_SESSION["errMessage"] = "Password Errata";
@@ -25,7 +25,7 @@
         $_SESSION["errMessage"] = "Utente Inesistente";
     }
 
-    header('Location: paginalogin.php');
+    header('Location: ../GUI/paginalogin.php');
     exit;
 ?>
 

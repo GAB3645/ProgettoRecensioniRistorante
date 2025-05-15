@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("connessione.php");
+    include("../script/connessione.php");
 ?>
 
 <?php
@@ -17,23 +17,23 @@
 
     if ($result->num_rows > 0) {
         $_SESSION["errMessage"] = "Username già esistente";
-        header('Location: paginaregistrazione.php');
+        header('Location: ../script/paginaregistrazione.php');
     } else {
         $sql = "SELECT * FROM utente WHERE email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $_SESSION["errMessage"] = "Email già esistente";
-            header('Location: paginaregistrazione.php');
+            header('Location: ../script/paginaregistrazione.php');
         } else {
             $sql = "INSERT INTO utente (username, nome, cognome, email, password)
             VALUES ('$username', '$name', '$surname', '$email', '$passwordHASH')";
             if ($conn->query($sql) === TRUE) {
                 $_SESSION["loggedUser"] = $username;
                 $_SESSION["logged"] = true;
-                header('Location: benvenuto.php');
+                header('Location: ../GUI/benvenuto.php');
             } else {
                 $_SESSION["errMessage"] = "Errore durante la registrazione";
-                header('Location: paginaregistrazione.php');
+                header('Location: ../script/paginaregistrazione.php');
             }
         }
     }

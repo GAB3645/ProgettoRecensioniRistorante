@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("connessione.php");
+include("../script/connessione.php");
 
 if(isset($_POST["ristorante"]) && isset($_POST["voto"])) {
     $nomeRistorante = $_POST['ristorante'];
@@ -15,9 +15,9 @@ if(isset($_POST["ristorante"]) && isset($_POST["voto"])) {
         $row = $result->fetch_assoc();
         $idutente = $row["id_utente"];
     } else {
-        header('Location: logout.php');
+        header('Location: ../GUI/benvenuto.php');
         exit;
-    }
+    }   
 
     $sql = "SELECT codiceristorante FROM ristorante WHERE nome = '".$nomeRistorante."'";
     $result = $conn->query($sql);
@@ -42,22 +42,22 @@ if(isset($_POST["ristorante"]) && isset($_POST["voto"])) {
 
                 if ($result === TRUE) {
                     $_SESSION["esitoRecensione"] = true;
-                    header('Location: benvenuto.php');
+                    header('Location: ../GUI/benvenuto.php');
                 } else {
                     $_SESSION["esitoRecensione"] = false;
-                    header('Location: benvenuto.php');
+                    header('Location: ../GUI/benvenuto.php');
                 }
             } else {
                 $_SESSION["esitoRecensione"] = false;
-                header('Location: benvenuto.php');
+                header('Location: ../GUI/benvenuto.php');
             }
         } else {
             $_SESSION["esitoRecensione"] = false;
-            header('Location: benvenuto.php');
+            header('Location: ../GUI/benvenuto.php');
         }
     } else {
         $_SESSION["esitoRecensione"] = false;
-        header('Location: benvenuto.php');
+        header('Location: ../GUI/benvenuto.php');
     }
 }
 ?>
