@@ -20,3 +20,4 @@ if ($conn->query($sql) === TRUE) {
 header("Location: ../GUI/pannelloadmin.php");
 exit;
 ?>
+

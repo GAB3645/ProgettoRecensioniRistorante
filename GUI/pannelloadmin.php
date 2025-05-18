@@ -15,6 +15,7 @@ if (!isset($_SESSION["admin"]) || $_SESSION["admin"] !== true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pannello Admin</title>
     <link rel="stylesheet" href="../css/stylePannelloadmin.css">
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
 </head>
 <body>
 

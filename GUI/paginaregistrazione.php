@@ -10,6 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/stylePaginaregistrazione.css">
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
 </head>
 
 <body>
@@ -17,30 +18,25 @@ session_start();
     <form action="../script/scriptregistrazione.php" method="post" class="form">
         <p class="title">Registrati</p>
         <label>
-            <input required="" placeholder="" type="text" class="input" name="username">
-            <span>Username</span>
+            <input required="" placeholder="Username" type="text" class="input" name="username">
         </label>
 
         <div class="flex">
             <label>
-                <input required="" placeholder="" type="text" class="input" name="name">
-                <span>Nome</span>
+                <input required="" placeholder="Nome" type="text" class="input" name="name">
             </label>
 
             <label>
-                <input required="" placeholder="" type="text" class="input" name="surname">
-                <span>Cognome</span>
+                <input required="" placeholder="Cognome" type="text" class="input" name="surname">
             </label>
         </div>
 
         <label>
-            <input required="" placeholder="" type="email" class="input" name="email">
-            <span>Email</span>
+            <input required="" placeholder="Email" type="email" class="input" name="email">
         </label>
 
         <label>
-            <input required="" placeholder="" type="password" class="input" name="password">
-            <span>Password</span>
+            <input required="" placeholder="Password" type="password" class="input" name="password">
         </label>
         <button class="submit">Invia</button>
     <?php

@@ -10,6 +10,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HomePage</title>
   <link rel="stylesheet" href="../css/stylePaginalogin.css">
+  <link rel="icon" type="image/png" href="../img/logo.jpg">
 </head>
 
 <body>

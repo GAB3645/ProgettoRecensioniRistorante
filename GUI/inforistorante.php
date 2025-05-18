@@ -38,9 +38,6 @@ if (isset($_POST["ristorante"])) {
         $latitudine = $row["lat"];
         $longitudine = $row["lon"];
     }
-    var_dump($latitudine);
-    var_dump($longitudine);
-
 
 ?>
 
@@ -59,7 +56,7 @@ if (isset($_POST["ristorante"])) {
      crossorigin=""></script>
 </head>
 <body onload="caricaMappa(<?php echo $latitudine; ?>, <?php echo $longitudine; ?>)">
-    <br><a href="../GUI/benvenuto.php"><button type="button" class="btn btn-primary">Indietro</button></a>
+    <br><a href="../GUI/benvenuto.php"><button type="button" class="btn">Indietro</button></a>
 
     <div id="map" style="width: 800px; height: 600px; margin-top: 50px; margin-left: auto; margin-right: auto;"></div>
 

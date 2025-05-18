@@ -1,27 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
-    color: #333;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/adminbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: overlay;
 }
+
 
 h1, h2 {
     text-align: center;
-    color: #2c3e50;
+    color: #ffffff;
+    margin-top: 30px;
 }
 
 hr {
-    margin: 30px 0;
-    border: 0;
+    margin: 30px auto;
+    border: none;
     height: 1px;
-    background-color: #ccc;
+    width: 80%;
+    background-color: #ff0000;
 }
 
 a button {
     display: block;
-    margin: 0 auto 20px auto;
-    padding: 10px 20px;
+    margin: 20px auto;
+    padding: 10px 25px;
     background-color: #e74c3c;
     color: white;
     border: none;
@@ -34,10 +44,11 @@ a button:hover {
     background-color: #c0392b;
 }
 
-/* Tabella */
 .table-responsive {
     margin: 20px auto;
-    max-width: 1300px; 
+    max-width: 1300px;
+    overflow-x: auto;
+    padding: 0 20px;
 }
 
 .table {
@@ -45,20 +56,21 @@ a button:hover {
     border-collapse: collapse;
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    table-layout: auto;
 }
 
 .table th, .table td {
-    padding: 12px;
+    padding: 12px 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     vertical-align: middle;
 }
 
-
-.table td form {
-    margin: 0;
+.table th {
+    background-color: #00426e;
+    color: white;
+    font-weight: bold;
 }
+
 
 .table td button {
     background-color: #e74c3c;
@@ -67,45 +79,41 @@ a button:hover {
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
-    width: 100%;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
 }
 
 .table td button:hover {
     background-color: #c0392b;
 }
+
 .form {
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
 }
 
-h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-label {
+.form label {
     font-weight: bold;
     display: block;
     margin-top: 15px;
     margin-bottom: 5px;
-}
+    color: #333;
+}   
 
-input[type="text"] {
+.form input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff3d3d;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-button[type="submit"] {
+.form button[type="submit"] {
     background-color: #3498db;
     color: white;
     padding: 12px;
@@ -115,14 +123,21 @@ button[type="submit"] {
     width: 100%;
     font-size: 16px;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+.form button[type="submit"]:hover {
     background-color: #2980b9;
 }
-
 
 p {
     text-align: center;
     font-weight: bold;
+    margin-top: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: auto;
 }

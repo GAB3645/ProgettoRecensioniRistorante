@@ -1,4 +1,17 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="../css/styleBenvenuto.css">
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+</head>
+
+<body>
+    
 <?php
+
     session_start();
     if($_SESSION["logged"] != false) {
         echo "<h1>Benvenuto " . $_SESSION["loggedUser"] . "</h1>";
@@ -65,8 +78,7 @@
                 echo '<input type="radio" name="voto" value="'.$i.'">'.$i.' ';
             }
             echo '<br><br><input type="submit" value="Inserisci Recensione">';
-            echo '</form>';
-            
+
             if(isset($_SESSION["esitoRecensione"])) {
                 if($_SESSION["esitoRecensione"] == true) {
                     echo "<p class='success'>Recensione inserita con successo</p>";
@@ -76,6 +88,9 @@
                     unset($_SESSION["esitoRecensione"]);
                 }
             }
+            echo '</form>';
+            
+
         }
     }
 
@@ -100,15 +115,7 @@
 
 
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
-    <link rel="stylesheet" href="../css/styleBenvenuto.css">
-</head>
-<body>
+
     <br><a href="../script/scriptlogout.php"><button type="button" class="btn btn-danger">Log-Out</button></a>
 </body>
 </html>
