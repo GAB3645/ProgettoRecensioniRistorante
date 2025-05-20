@@ -16,6 +16,8 @@ if (!isset($_SESSION["admin"]) || $_SESSION["admin"] !== true) {
     <title>Pannello Admin</title>
     <link rel="stylesheet" href="../css/stylePannelloadmin.css">
     <link rel="icon" type="image/png" href="../img/logo.jpg">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 
@@ -99,15 +101,15 @@ if (!isset($_SESSION["admin"]) || $_SESSION["admin"] !== true) {
     <label for="citta">Città:</label>
     <input type="text" id="citta" name="citta" required>
 
-    <label for="latitudine">Latitudine:</label>
-    <input type="text" id="latitudine" name="latitudine" required>
+    <input type="hidden" id="latitudine" name="latitudine" required>
+    <input type="hidden" id="longitudine" name="longitudine" required>
 
-    <label for="longitudine">Longitudine:</label>
-    <input type="text" id="longitudine" name="longitudine" required>
+    <div id="map"></div>
 
     <button type="submit">Aggiungi Ristorante</button>
 </form>
 
+<script src="../script/mappaAdmin.js"></script>
 
 </body>
 </html>
