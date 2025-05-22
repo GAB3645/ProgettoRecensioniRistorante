@@ -39,7 +39,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: #ffffff;
-
 }
 
 th, td {
@@ -82,15 +81,17 @@ form select, form input[type="radio"] {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
+}   
 
 form select:focus, form input[type="radio"]:focus {
     outline: none;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
-form input[type="submit"] {
-    background-color: #3498db;
+
+
+form input[type="submit"], button#eliminaBtn {
+    background-color: #19c2ff;
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -98,13 +99,23 @@ form input[type="submit"] {
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 15px;
 }
 
-form input[type="submit"]:hover {
-    background-color: #2980b9;
+form input[type="submit"]:hover, button#eliminaBtn:hover {
+    background-color: #ff0000;
 }
 
-/* Pulsante logout */
+button#eliminaBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+table td input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
 button.btn-danger {
     background-color: #e74c3c;
     color: #fff;
@@ -120,7 +131,6 @@ button.btn-danger:hover {
     background-color: #c0392b;
 }
 
-/* Messaggi di esito */
 p.success {
     color: #27ae60;
     font-weight: 600;
