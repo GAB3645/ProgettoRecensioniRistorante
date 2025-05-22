@@ -2,6 +2,8 @@
 
 Questo progetto è un'applicazione web che consente agli utenti di visualizzare, inserire e gestire recensioni di ristoranti. Sviluppato come progetto scolastico, unisce l'uso di HTML, CSS, JavaScript e PHP per offrire un'esperienza dinamica e interattiva.
 
+LINK AL SITO: http://gab3645.altervista.org/
+
 ## 🚀 Funzionalità
 
 - Registrazione e login degli utenti
